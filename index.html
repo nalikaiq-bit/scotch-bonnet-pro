@@ -8,15 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Anti-Copy and Anti-Screenshot styling */
-        * { 
-            -webkit-user-select: none !important; 
-            user-select: none !important; 
-            -webkit-touch-callout: none !important; 
-        }
+        * { -webkit-user-select: none !important; user-select: none !important; -webkit-touch-callout: none !important; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         .watermark-grid { background-image: radial-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 0); background-size: 24px 24px; }
-        input { -webkit-user-select: auto !important; user-select: auto !important; }
+        input, select { -webkit-user-select: auto !important; user-select: auto !important; }
     </style>
 </head>
 <body class="bg-amber-50/40 pb-28 text-gray-800 watermark-grid select-none" oncontextmenu="return false;" ondragstart="return false;">
@@ -78,10 +73,10 @@
             </div>
         </div>
 
-        <!-- Forgot Password View -->
+        <!-- Forgot Password -->
         <div id="viewForgot" class="hidden bg-white p-6 rounded-3xl shadow-sm border border-amber-200 space-y-4">
             <h2 class="text-lg font-bold text-gray-800">මුරපදය නැවත සකසන්න</h2>
-            <p class="text-xs text-gray-500">ඔබ ලියාපදිංචි වූ Email ලිපිනය හෝ දුරකථන අංකය ඇතුළත් කරන්න.</p>
+            <p class="text-xs text-gray-500">ලියාපදිංචි වූ Email ලිපිනය හෝ දුරකථන අංකය ඇතුළත් කරන්න.</p>
             <div>
                 <input type="text" id="forgotIdInput" placeholder="user@gmail.com හෝ 07XXXXXXXX" class="w-full border rounded-xl p-3 text-sm bg-gray-50">
             </div>
@@ -93,7 +88,7 @@
             </div>
         </div>
 
-        <!-- OTP Verification -->
+        <!-- OTP -->
         <div id="viewOtp" class="hidden bg-white p-6 rounded-3xl shadow-sm border border-amber-200 space-y-4 text-center">
             <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto text-xl">
                 <i class="fas fa-envelope-open-text"></i>
@@ -119,7 +114,6 @@
 
     <!-- 2. MAIN APPLICATION -->
     <div id="appContainer" class="hidden">
-        <!-- Header with Eco Commitment Banner -->
         <header class="bg-gradient-to-r from-emerald-800 to-green-700 text-white shadow-md sticky top-0 z-30">
             <div class="p-3.5 flex justify-between items-center">
                 <div class="flex items-center gap-2">
@@ -141,8 +135,8 @@
                     </button>
                 </div>
             </div>
-            <!-- Permanent Eco/Bio Notice -->
-            <div class="bg-emerald-950/90 px-3 py-1.5 text-[10px] text-emerald-200 flex items-center justify-center gap-1.5 border-t border-emerald-600/40">
+            <!-- Eco Notice -->
+            <div class="bg-emerald-950/90 px-3 py-1.5 text-[10px] text-emerald-200 flex items-center justify-center gap-1.5 border-t border-emerald-600/40 text-center">
                 <i class="fas fa-leaf text-lime-400"></i>
                 <span><b>100% ජෛව ආරක්ෂාව:</b> මෙම වගාවට රසායනික කෘමිනාශක හෝ රසායනික දිලීරනාශක කිසිවක් යොදා නොගනී!</span>
             </div>
@@ -191,8 +185,8 @@
 
                     <div>
                         <label class="text-xs font-bold text-emerald-800 block mb-1">ඔබේ වගාවේ ඇති සම්පූර්ණ පැළ ගණන:</label>
-                        <input type="number" id="plantCount" value="50" placeholder="උදා: 50, 100, 500, 2000" class="w-full border-2 border-emerald-500 rounded-xl p-2.5 text-sm font-black bg-emerald-50/50">
-                        <span class="text-[10px] text-gray-500">පැළ ගණනට අනුව 16L ටැංකි සහ අවශ්‍ය පොහොර බර ස්වයංක්‍රීයව හැදේ.</span>
+                        <input type="number" id="plantCount" value="50" placeholder="උදා: 50, 100, 500, 2000, 3000" class="w-full border-2 border-emerald-500 rounded-xl p-2.5 text-sm font-black bg-emerald-50/50">
+                        <span class="text-[10px] text-gray-500">පැළ ගණනට අනුව අවශ්‍ය ටැංකි ප්‍රමාණය හා පොහොර බර ස්වයංක්‍රීයව හැදේ.</span>
                     </div>
 
                     <button onclick="saveCropProfile()" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 rounded-xl text-xs shadow">
@@ -223,7 +217,7 @@
                     </div>
                 </div>
 
-                <!-- Alert for Day 4+ Ad Gated Schedule (30s Rewarded Ad) -->
+                <!-- Alert for Day 4+ Ad Gated Schedule -->
                 <div id="adScheduleAlert" class="hidden bg-amber-50 border border-amber-300 p-3 rounded-2xl text-xs text-amber-900 flex justify-between items-center">
                     <div>
                         <b><i class="fas fa-lock mr-1"></i> අද දින කාර්යයන් පමණක් පෙන්වයි</b>
@@ -237,7 +231,7 @@
                 <div id="stagesContainer" class="space-y-4"></div>
             </section>
 
-            <!-- TAB 2: JADAM & BIO SOLUTIONS MANUAL (Includes JWA, JS & Recipes) -->
+            <!-- TAB 2: JADAM & BIO SOLUTIONS MANUAL -->
             <section id="tab-jadam" class="tab-content hidden space-y-4">
                 
                 <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-2xl text-xs text-emerald-900 leading-relaxed">
@@ -265,7 +259,7 @@
                             <p>• <b>අවසානයේ එකතු කරන වැසි ජලය:</b> 3.2 L (මුළු 10L සම්පූර්ණ කිරීමට)</p>
 
                             <div class="bg-red-100 p-2.5 rounded-xl border border-red-300 text-red-950 text-[11px] leading-relaxed">
-                                <b>⚠️ ආරක්ෂක උපදෙස්:</b> කොස්ටික් සෝඩා සහ සල්ෆර් වලට වතුර දැමූ විට සෙල්සියස් අංශක 100+ ක අධික තාපයක් (තාපදායක ප්‍රතික්‍රියාවක්) ඇතිවේ. ඒ නිසා ලී දණ්ඩකින් මිශ්‍ර කරන්න. ආරක්ෂිත ඇස් කණ්ණාඩි හා අත්වැසුම් පළඳින්න.
+                                <b>⚠️ ආරක්ෂක උපදෙස්:</b> කොස්ටික් සෝඩා සහ සල්ෆර් වලට වතුර දැමූ විට සෙල්සියස් අංශක 100+ ක අධික තාපයක් හටගනී. ලී දණ්ඩකින් මිශ්‍ර කරන්න. ආරක්ෂිත ඇස් කණ්ණාඩි පළඳින්න.
                             </div>
 
                             <p class="text-[11px] text-gray-700"><b>හදන පිළිවෙළ:</b> බාල්දියකට සල්ෆර් 2.5kg, රතු පස් 50g, ලුණු 150g සහ කොස්ටික් සෝඩා 2kg දමන්න. ආරම්භක වැසි ජලය 5L එකවර දමා ලී දණ්ඩෙන් මිශ්‍ර කරන්න. තද රතු/දුඹුරු පැහැ වී තාපය බැසගිය පසු ඉතිරි වැසි ජලය 3.2L දමා පැය 24ක් නිශ්චලව තබා ඉහළ පැහැදිලි රතු ද්‍රාවණය පෙරාගන්න.</p>
@@ -310,7 +304,7 @@
                         </h4>
                         <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">දියර පොහොර</span>
                     </div>
-                    <p class="text-xs text-gray-600">පත්‍ර වල යටි පැත්තට ස්ප්‍රේ කරන ක්ෂණික ශාක පෝෂකය (පැළ 2000කට 16L ටැංකි 5ක්).</p>
+                    <p class="text-xs text-gray-600">පත්‍ර වල යටි පැත්තට ස්ප්‍රේ කරන ක්ෂණික ශාක පෝෂකය.</p>
                     
                     <div id="jlfRecipeDetail" class="recipe-content hidden space-y-2 pt-2 border-t border-gray-100 text-xs bg-emerald-50 p-3 rounded-2xl">
                         <p>• වල් පැළෑටි/දළු + කැලෑ පස් මිටක් + වැසි ජලය දමා පියන වසා මාස 2-3ක් තබා 1:30 හෝ 1:50 ට වැසි ජලය සමඟ මිශ්‍ර කර පත්‍ර යටට ස්ප්‍රේ කරන්න.</p>
@@ -328,7 +322,7 @@
                         </h4>
                         <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded-full">පාංශු සත්කාරය</span>
                     </div>
-                    <p class="text-xs text-gray-600">ගස් මුලට වදින සේ ස්ප්‍රේ කරන්න (පැළ 2000ට 16L ටැංකි 6ක්).</p>
+                    <p class="text-xs text-gray-600">ගස් මුලට වදින සේ ස්ප්‍රේ කරන ජීවාමෘතය.</p>
                     
                     <div id="jmsRecipeDetail" class="recipe-content hidden space-y-2 pt-2 border-t border-gray-100 text-xs bg-purple-50 p-3 rounded-2xl">
                         <p>• වතුර 20L + තැම්බූ අල ගෙඩි 1 + කැලෑ පස් මිටක් + මුහුදු ලුණු 20g රෙදි පොදියක දමා මිරිකා දින 2-3ක් තබා පෙණ ආ පසු ගස් මුලට වත්කරන්න.</p>
@@ -360,7 +354,7 @@
 
                 <div class="bg-white p-4 rounded-3xl shadow-sm border border-emerald-200 p-4 space-y-2 text-xs text-emerald-950">
                     <b class="text-emerald-900 flex items-center gap-1.5"><i class="fas fa-seedling"></i> දියකර යෙදීමේ රන් නීතිය (5g / 1L):</b>
-                    <p>• <b>ඇල්බට් සොලියුෂන් / කැල්සිනයිට් / යාරමිලා දියකරද්දී:</b> සෑමවිටම <b>වතුර ලීටරයකට ග්‍රෑම් 5ක්</b> (16L ටැංකියකට ග්‍රෑම් 80ක්) මිශ්‍ර කරන්න. මීට වඩා සාන්ද්‍රණය වැඩි නොකරන්න.</p>
+                    <p>• <b>ඇල්බට් සොලියුෂන් / කැල්සිනයිට් / යාරමිලා දියකරද්දී:</b> සෑමවිටම <b>වතුර ලීටරයකට ග්‍රෑම් 5ක්</b> (16L ටැංකියකට ග්‍රෑම් 80ක් පමණ) මිශ්‍ර කරන්න. මීට වඩා සාන්ද්‍රණය වැඩි නොකරන්න.</p>
                     <p>• <b>කැට පොහොර ලෙස පසට දමන්නේ නම් (යාරමිලා):</b> මුලට ඈතින් රවුමට දමා <b>හොඳින් වතුර දමන්න</b>.</p>
                 </div>
             </section>
@@ -429,7 +423,7 @@
         </nav>
     </div>
 
-    <!-- PROFILE / ACCOUNT SETTINGS MODAL -->
+    <!-- PROFILE MODAL -->
     <div id="profileModal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-3xl max-w-sm w-full p-5 text-center shadow-xl border border-gray-200 space-y-4">
             <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl">
@@ -452,7 +446,7 @@
         </div>
     </div>
 
-    <!-- CUSTOM APP ALERT / MESSAGE MODAL -->
+    <!-- ALERT MODAL -->
     <div id="appModal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-3xl max-w-xs w-full p-5 text-center shadow-2xl space-y-3">
             <div id="appModalIcon" class="w-12 h-12 rounded-full flex items-center justify-center mx-auto text-xl bg-emerald-100 text-emerald-800">
@@ -466,7 +460,7 @@
         </div>
     </div>
 
-    <!-- CUSTOM CONFIRM MODAL -->
+    <!-- CONFIRM MODAL -->
     <div id="confirmModal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-3xl max-w-xs w-full p-5 text-center shadow-2xl space-y-3">
             <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto text-xl bg-amber-100 text-amber-800">
@@ -529,7 +523,6 @@
 
     <!-- JAVASCRIPT SCHEDULE ENGINE -->
     <script>
-        // Anti-Screenshot and Anti-Copy Keyboard Traps
         document.addEventListener('keyup', (e) => {
             if (e.key === 'PrintScreen') { 
                 navigator.clipboard.writeText(''); 
@@ -537,7 +530,6 @@
             }
         });
 
-        // App modal helpers
         let confirmActionCallback = null;
 
         function showAppAlert(title, message, iconClass = 'fa-info-circle', iconColor = 'bg-emerald-100 text-emerald-800') {
@@ -568,7 +560,7 @@
             }
         }
 
-        // FERTILIZER SCHEDULES (Day 6 Start for Fert)
+        // FERTILIZER SCHEDULES (Day 6 Start)
         const haifaSchedule = [
             {
                 stage: "STAGE 1", name: "ROOTS (මුල් ඇදීම)", range: "Day 1–20", icon: "fa-seedling", color: "from-amber-400 to-yellow-500",
@@ -716,14 +708,13 @@
             const record = registry[id];
             if (!record) return true;
             const hoursPassed = (new Date() - new Date(record.firstSeenDate)) / (1000 * 60 * 60);
-            return hoursPassed < 72; // 72 Hours = 3 Days Free
+            return hoursPassed < 72;
         }
 
-        // 30 Seconds Rewarded Ad Simulation
         function triggerAd(callback) {
             adUnlockCallback = callback;
             document.getElementById('adOverlay').classList.remove('hidden');
-            let timeLeft = 30; // 30s ad duration
+            let timeLeft = 30;
             const numEl = document.getElementById('adCountdownNum');
             const textEl = document.getElementById('adCountdownText');
             const closeBtn = document.getElementById('closeAdBtn');
@@ -924,7 +915,6 @@
             });
         }
 
-        // Profile & Account Management
         function openProfileModal() {
             const user = JSON.parse(localStorage.getItem('NAI_USER')) || {};
             document.getElementById('profName').innerText = user.name || "ගොවි මහතා";
@@ -1030,7 +1020,7 @@
             });
         }
 
-        // BATCH CALCULATOR
+        // BATCH CALCULATOR (Realistic 3000 Plants = ~4 16L Tanks Ratio)
         function buildIntelligentSchedule(plantDate, currentAge, plantCount, fertProgram) {
             const container = document.getElementById('stagesContainer');
             container.innerHTML = "";
@@ -1080,39 +1070,37 @@
                         statusBadge = `<span class="text-[9px] text-gray-400 ml-1">(පසු වූ)</span>`;
                     }
 
-                    // CALCULATIONS: 5g per 1L / 80g per 16L Tank
+                    // Practical Foliar Calculation (3000 plants -> ~4 16L tanks)
                     let batchInfoHtml = "";
                     if (t.type === 'fert') {
                         const isAlbert = t.title.includes("ඇල්බට්") || t.title.includes("Albert");
                         const isGranularYara = t.title.includes("යාරමිලා") || t.title.includes("YaraMila") || t.title.includes("K44");
                         
-                        const foliarTanksExact = (plantCount * 5) / 2000;
                         let foliarText = "";
-                        let foliarFertGrams = 0;
-                        if (foliarTanksExact <= 0.6) {
-                            const foliarWaterL = Math.max(1, (foliarTanksExact * 16)).toFixed(1);
-                            foliarFertGrams = (foliarWaterL * 5).toFixed(0);
-                            foliarText = `වතුර <b>${foliarWaterL}L</b> කට පොහොර <b>${foliarFertGrams}g</b> (ලීටරයකට 5g බැගින්)`;
+                        if (plantCount <= 100) {
+                            foliarText = `වතුර <b>1L - 2L පමණ</b> කට පොහොර <b>5g - 10g පමණ</b>`;
+                        } else if (plantCount <= 300) {
+                            foliarText = `වතුර <b>4L - 5L පමණ</b> කට පොහොර <b>20g - 25g පමණ</b>`;
                         } else {
-                            const tanksCount = Math.ceil(foliarTanksExact);
-                            foliarFertGrams = tanksCount * 80;
-                            foliarText = `16L ටැංකි <b>${tanksCount}</b> ක් (ටැංකියකට 80g බැගින් මුළු පොහොර <b>${foliarFertGrams}g</b>)`;
+                            const foliarTanks = Math.ceil((plantCount * 4) / 3000);
+                            const foliarGrams = foliarTanks * 80;
+                            foliarText = `16L ටැංකි <b>${foliarTanks}ක් පමණ</b> (ටැංකියකට 80g බැගින් මුළු පොහොර <b>${foliarGrams}g පමණ</b>)`;
                         }
 
-                        const rootDrenchWaterLiters = ((100 * plantCount) / 1000).toFixed(1);
-                        const rootDrenchFertGrams = (rootDrenchWaterLiters * 5).toFixed(0);
+                        const rootDrenchWaterLiters = ((100 * plantCount) / 1000).toFixed(0);
+                        const rootDrenchFertGrams = (rootDrenchWaterLiters * 5);
                         const rootDrenchFertText = (rootDrenchFertGrams >= 1000) ? (rootDrenchFertGrams / 1000).toFixed(2) + " kg" : rootDrenchFertGrams + " g";
 
                         if (isAlbert) {
                             batchInfoHtml = `
                                 <div class="mt-2 bg-emerald-50/90 border border-emerald-300 p-2.5 rounded-2xl text-[10px] text-emerald-950 space-y-1.5">
                                     <div class="font-black text-emerald-900 border-b border-emerald-200 pb-1 flex justify-between items-center">
-                                        <span><i class="fas fa-calculator mr-1"></i> ඇල්බට් සොලියුෂන් (වතුර 1L ට 5g / 16L ට 80g සම්මත මිශ්‍රණය):</span>
+                                        <span><i class="fas fa-calculator mr-1"></i> ඇල්බට් සොලියුෂන් (පැළ ${plantCount} සඳහා):</span>
                                     </div>
                                     <div class="space-y-1 text-[10px] leading-relaxed">
-                                        <p><i class="fas fa-spray-can text-green-700 mr-1"></i> <b>ක්‍රමය 1 (පත්‍ර වලට ඉසිනවා නම්):</b> ${foliarText} ස්ප්‍රේ කරන්න.</p>
-                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>ක්‍රමය 2 (දියකර මුලට වත්කරනවා නම්):</b> මුළු වතුර <b>${rootDrenchWaterLiters}L</b> කට ඇල්බට් <b>${rootDrenchFertText}</b> ක් දියකර පැළයකට 100ml බැගින් මුලට දමන්න.</p>
-                                        <span class="text-[9px] text-emerald-800 font-extrabold block pt-0.5"><i class="fas fa-exclamation-circle mr-0.5"></i> ඇල්බට් සොලියුෂන් සෑමවිටම ජලයේ දියකර පමණක් යොදන්න (කැට වශයෙන් පසට නොදමන්න).</span>
+                                        <p><i class="fas fa-spray-can text-green-700 mr-1"></i> <b>පත්‍ර වලට ඉසිනවා නම්:</b> ${foliarText} ස්ප්‍රේ කරන්න.</p>
+                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර මුලට වත්කරනවා නම්:</b> මුළු වතුර <b>${rootDrenchWaterLiters}L පමණ</b> කට ඇල්බට් <b>${rootDrenchFertText} පමණ</b> දියකර පැළයකට 100ml බැගින් මුලට දමන්න.</p>
+                                        <span class="text-[9px] text-emerald-800 font-extrabold block pt-0.5"><i class="fas fa-exclamation-circle mr-0.5"></i> ඇල්බට් සොලියුෂන් සෑමවිටම ජලයේ දියකර පමණක් යොදන්න.</span>
                                     </div>
                                 </div>
                             `;
@@ -1124,11 +1112,11 @@
                             batchInfoHtml = `
                                 <div class="mt-2 bg-emerald-50/90 border border-emerald-300 p-2.5 rounded-2xl text-[10px] text-emerald-950 space-y-1.5">
                                     <div class="font-black text-emerald-900 border-b border-emerald-200 pb-1 flex justify-between items-center">
-                                        <span><i class="fas fa-calculator mr-1"></i> යාරමිලා පොහොර යොදන ක්‍රම (පැළ ${plantCount}ට):</span>
+                                        <span><i class="fas fa-calculator mr-1"></i> යාරමිලා පොහොර යොදන ක්‍රම (පැළ ${plantCount} සඳහා):</span>
                                     </div>
                                     <div class="space-y-1 text-[10px] leading-relaxed">
-                                        <p><i class="fas fa-cubes text-amber-700 mr-1"></i> <b>කැට පොහොර ලෙස පසට දමනවා නම්:</b> පැළයකට <b>${granularPerPlant}g</b> බැගින් (මුළු බර: <b>${totalGranularText}</b>) මුලට ඈතින් රවුම් ආකාරයට දමා <b>හොඳින් වතුර දමන්න</b>.</p>
-                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර යොදනවා නම් (වතුර 1L ට 5g / 16L ට 80g):</b> මුළු වතුර <b>${rootDrenchWaterLiters}L</b> කට යාරමිලා <b>${rootDrenchFertText}</b> ක් දියකර මුලට දමන්න.</p>
+                                        <p><i class="fas fa-cubes text-amber-700 mr-1"></i> <b>කැට පොහොර ලෙස පසට දමනවා නම්:</b> පැළයකට <b>${granularPerPlant}g පමණ</b> බැගින් (මුළු බර: <b>${totalGranularText} පමණ</b>) මුලට ඈතින් රවුම් ආකාරයට දමා <b>හොඳින් වතුර දමන්න</b>.</p>
+                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර යොදනවා නම්:</b> මුළු වතුර <b>${rootDrenchWaterLiters}L පමණ</b> කට යාරමිලා <b>${rootDrenchFertText} පමණ</b> දියකර මුලට දමන්න.</p>
                                     </div>
                                 </div>
                             `;
@@ -1136,40 +1124,40 @@
                             batchInfoHtml = `
                                 <div class="mt-2 bg-emerald-50/90 border border-emerald-300 p-2.5 rounded-2xl text-[10px] text-emerald-950 space-y-1.5">
                                     <div class="font-black text-emerald-900 border-b border-emerald-200 pb-1 flex justify-between items-center">
-                                        <span><i class="fas fa-calculator mr-1"></i> ${t.title} (වතුර 1L ට 5g / 16L ට 80g අනුපාතයට):</span>
+                                        <span><i class="fas fa-calculator mr-1"></i> ${t.title} (පැළ ${plantCount} සඳහා):</span>
                                     </div>
                                     <div class="space-y-1 text-[10px] leading-relaxed">
-                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර මුලට වත්කරනවා නම්:</b> වතුර <b>${rootDrenchWaterLiters}L</b> කට පොහොර <b>${rootDrenchFertText}</b> ක් දියකර පැළයකට 100ml බැගින් මුලට දමන්න.</p>
                                         <p><i class="fas fa-spray-can text-green-700 mr-1"></i> <b>පත්‍ර වලට ඉසිනවා නම්:</b> ${foliarText} ස්ප්‍රේ කරන්න.</p>
+                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර මුලට වත්කරනවා නම්:</b> වතුර <b>${rootDrenchWaterLiters}L පමණ</b> කට පොහොර <b>${rootDrenchFertText} පමණ</b> දියකර පැළයකට 100ml බැගින් මුලට දමන්න.</p>
                                     </div>
                                 </div>
                             `;
                         }
                     } else if (t.type === 'jwa' || t.type === 'tricho') {
-                        const tanksFloat = (plantCount * 3) / 2000;
-                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක්` : `${Math.ceil(tanksFloat)}ක්`;
+                        const tanksFloat = (plantCount * 4) / 3000;
+                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක් පමණ` : `${Math.ceil(tanksFloat)}ක් පමණ`;
                         batchInfoHtml = `
                             <div class="mt-1.5 bg-amber-50 border border-amber-200 p-2 rounded-xl text-[10px] text-amber-950 font-bold flex items-center justify-between">
                                 <span><i class="fas fa-spray-can mr-1"></i> ස්ප්‍රේ ප්‍රමාණය:</span>
-                                <span class="text-amber-800">16L ටැංකි <b>${tanksText}</b> පමණ ප්‍රමාණවත් (2000ට 3ක්)</span>
+                                <span class="text-amber-800">16L ටැංකි <b>${tanksText}</b></span>
                             </div>
                         `;
                     } else if (t.type === 'jms') {
                         const tanksFloat = (plantCount * 6) / 2000;
-                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක්` : `${Math.ceil(tanksFloat)}ක්`;
+                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක් පමණ` : `${Math.ceil(tanksFloat)}ක් පමණ`;
                         batchInfoHtml = `
                             <div class="mt-1.5 bg-purple-50 border border-purple-200 p-2 rounded-xl text-[10px] text-purple-950 font-bold flex items-center justify-between">
                                 <span><i class="fas fa-tint mr-1"></i> මුල් වලට ස්ප්‍රේ ප්‍රමාණය:</span>
-                                <span class="text-purple-800">16L ටැංකි <b>${tanksText}</b> පමණ මුල් තෙමෙන්න (2000ට 6ක්)</span>
+                                <span class="text-purple-800">16L ටැංකි <b>${tanksText}</b></span>
                             </div>
                         `;
                     } else if (t.type === 'jlf') {
-                        const tanksFloat = (plantCount * 5) / 2000;
-                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක්` : `${Math.ceil(tanksFloat)}ක්`;
+                        const tanksFloat = (plantCount * 4) / 3000;
+                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක් පමණ` : `${Math.ceil(tanksFloat)}ක් පමණ`;
                         batchInfoHtml = `
                             <div class="mt-1.5 bg-green-50 border border-green-200 p-2 rounded-xl text-[10px] text-green-950 font-bold flex items-center justify-between">
                                 <span><i class="fas fa-leaf mr-1"></i> පත්‍ර යටට ස්ප්‍රේ ප්‍රමාණය:</span>
-                                <span class="text-green-800">16L ටැංකි <b>${tanksText}</b> පමණ කොළ යටට (2000ට 5ක්)</span>
+                                <span class="text-green-800">16L ටැංකි <b>${tanksText}</b></span>
                             </div>
                         `;
                     }
