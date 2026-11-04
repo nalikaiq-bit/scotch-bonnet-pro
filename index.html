@@ -11,7 +11,7 @@
         * { -webkit-user-select: none !important; user-select: none !important; -webkit-touch-callout: none !important; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         .watermark-grid { background-image: radial-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 0); background-size: 24px 24px; }
-        input, select { -webkit-user-select: auto !important; user-select: auto !important; }
+        input, select, textarea { -webkit-user-select: auto !important; user-select: auto !important; }
     </style>
 </head>
 <body class="bg-amber-50/40 pb-28 text-gray-800 watermark-grid select-none" oncontextmenu="return false;" ondragstart="return false;">
@@ -128,7 +128,7 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <button onclick="openProfileModal()" class="text-xs bg-emerald-900/60 hover:bg-emerald-900 px-2.5 py-1.5 rounded-full flex items-center gap-1 font-bold">
-                        <i class="fas fa-user-cog"></i>
+                        <i class="fas fa-user-circle mr-0.5"></i> Profile
                     </button>
                     <button onclick="handleLogout()" class="text-xs bg-red-600/80 hover:bg-red-700 px-3 py-1.5 rounded-full flex items-center gap-1 font-bold">
                         <i class="fas fa-sign-out-alt"></i>
@@ -231,14 +231,127 @@
                 <div id="stagesContainer" class="space-y-4"></div>
             </section>
 
-            <!-- TAB 2: JADAM & BIO SOLUTIONS MANUAL -->
+            <!-- TAB 2: MARKETPLACE SCREEN -->
+            <section id="tab-market" class="tab-content hidden space-y-4">
+                
+                <!-- Nurseries -->
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-emerald-200 space-y-3">
+                    <div class="flex items-center gap-2 border-b border-gray-100 pb-2">
+                        <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold"><i class="fas fa-seedling"></i></span>
+                        <div>
+                            <h3 class="text-xs font-black text-gray-800">උසස් තත්ත්වයේ පැළ ලබාගත හැකි ස්ථාන</h3>
+                            <p class="text-[10px] text-gray-500">Dark Green Jumbo නයි මිරිස් තවාන්</p>
+                        </div>
+                    </div>
+
+                    <!-- Nursery 1 -->
+                    <div class="bg-emerald-50/60 p-3 rounded-2xl border border-emerald-100 flex justify-between items-center">
+                        <div>
+                            <h4 class="text-xs font-extrabold text-emerald-950">නයෝමි Plantation</h4>
+                            <p class="text-[11px] text-emerald-800"><i class="fas fa-map-marker-alt text-red-500 mr-1"></i>කටුගස්තොට</p>
+                            <span class="text-[10px] font-mono font-bold text-gray-600">075 404 9914</span>
+                        </div>
+                        <div class="flex gap-1.5">
+                            <a href="tel:0754049914" class="bg-emerald-700 text-white p-2 rounded-xl text-xs hover:bg-emerald-800 shadow"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://wa.me/94754049914" target="_blank" class="bg-green-600 text-white p-2 rounded-xl text-xs hover:bg-green-700 shadow"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Nursery 2 -->
+                    <div class="bg-emerald-50/60 p-3 rounded-2xl border border-emerald-100 flex justify-between items-center">
+                        <div>
+                            <h4 class="text-xs font-extrabold text-emerald-950">Ratnadeepa Plantation</h4>
+                            <p class="text-[11px] text-emerald-800"><i class="fas fa-map-marker-alt text-red-500 mr-1"></i>මාවතගම (Mawathagama)</p>
+                            <span class="text-[10px] text-emerald-700 font-semibold">උසස්ම පැළ ඇණවුම් සඳහා</span>
+                        </div>
+                        <div class="flex gap-1.5">
+                            <button onclick="showAppAlert('Ratnadeepa Plantation', 'මාවතගම පිහිටි රත්නදීප ප්ලාන්ටේෂන් වෙතින් නයි මිරිස් පැළ ලබාගත හැක.')" class="bg-emerald-800 text-white px-3 py-1.5 rounded-xl text-[10px] font-bold shadow">විස්තර</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JADAM Materials -->
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-amber-200 space-y-3">
+                    <div class="flex items-center gap-2 border-b border-gray-100 pb-2">
+                        <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm font-bold"><i class="fas fa-flask"></i></span>
+                        <div>
+                            <h3 class="text-xs font-black text-gray-800">ජඩාම් අමුද්‍රව්‍ය මිලදී ගැනීමට (JADAM Raw Materials)</h3>
+                            <p class="text-[10px] text-gray-500">KOH, NaOH, සල්ෆර්, තෙල් ආදිය විශ්වාසයෙන් ලබාගන්න</p>
+                        </div>
+                    </div>
+
+                    <!-- Seller 1 -->
+                    <div class="bg-amber-50/60 p-2.5 rounded-2xl border border-amber-100 flex justify-between items-center text-xs">
+                        <div>
+                            <b class="text-gray-800 text-xs block">Mr. Sujeewa</b>
+                            <span class="text-[10px] text-amber-900 block"><i class="fas fa-map-marker-alt text-red-500 mr-1"></i>කඩවත (Kadawatha)</span>
+                            <span class="text-[10px] font-mono text-gray-600">075 059 7777</span>
+                        </div>
+                        <div class="flex gap-1.5">
+                            <a href="tel:0750597777" class="bg-amber-600 text-white p-2 rounded-xl text-xs hover:bg-amber-700 shadow"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://wa.me/94750597777" target="_blank" class="bg-green-600 text-white p-2 rounded-xl text-xs hover:bg-green-700 shadow"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Seller 2 -->
+                    <div class="bg-amber-50/60 p-2.5 rounded-2xl border border-amber-100 flex justify-between items-center text-xs">
+                        <div>
+                            <b class="text-gray-800 text-xs block">Mr. Aneez</b>
+                            <span class="text-[10px] text-amber-900 block"><i class="fas fa-map-marker-alt text-red-500 mr-1"></i>ගාල්ල (Galle)</span>
+                            <span class="text-[10px] font-mono text-gray-600">078 583 0292</span>
+                        </div>
+                        <div class="flex gap-1.5">
+                            <a href="tel:0785830292" class="bg-amber-600 text-white p-2 rounded-xl text-xs hover:bg-amber-700 shadow"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://wa.me/94785830292" target="_blank" class="bg-green-600 text-white p-2 rounded-xl text-xs hover:bg-green-700 shadow"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Seller 3 -->
+                    <div class="bg-amber-50/60 p-2.5 rounded-2xl border border-amber-100 flex justify-between items-center text-xs">
+                        <div>
+                            <b class="text-gray-800 text-xs block">Mr. Pethum</b>
+                            <span class="text-[10px] text-amber-900 block"><i class="fas fa-map-marker-alt text-red-500 mr-1"></i>බලන්ගොඩ (Balangoda)</span>
+                            <span class="text-[10px] font-mono text-gray-600">077 255 6099</span>
+                        </div>
+                        <div class="flex gap-1.5">
+                            <a href="tel:0772556099" class="bg-amber-600 text-white p-2 rounded-xl text-xs hover:bg-amber-700 shadow"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://wa.me/94772556099" target="_blank" class="bg-green-600 text-white p-2 rounded-xl text-xs hover:bg-green-700 shadow"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harvest Marketplace -->
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-emerald-300 space-y-3">
+                    <div class="flex justify-between items-center border-b border-gray-100 pb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm font-bold"><i class="fas fa-pepper-hot"></i></span>
+                            <div>
+                                <h3 class="text-xs font-black text-gray-800">නයි මිරිස් අස්වැන්න විකුණා ගැනීමට</h3>
+                                <p class="text-[10px] text-gray-500">ගැණුම්කරුවන් සඳහා සෘජු වෙළඳපොළ</p>
+                            </div>
+                        </div>
+                        <button onclick="openPostHarvestModal()" class="bg-red-600 hover:bg-red-700 text-white text-[10px] font-black px-3 py-1.5 rounded-xl shadow flex items-center gap-1">
+                            <i class="fas fa-plus"></i> පෝස්ට් එකක් දාන්න
+                        </button>
+                    </div>
+
+                    <div id="harvestPostsContainer" class="space-y-3">
+                        <div class="text-center py-6 text-gray-400 text-xs">
+                            <i class="fas fa-store-alt text-2xl mb-1 text-gray-300"></i><br>දැනට පළ කළ අස්වනු දැන්වීම් නොමැත. ඔබේ අස්වැන්න විකුණා ගැනීමට දැන්වීමක් පළ කරන්න!
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- TAB 3: JADAM & BIO SOLUTIONS MANUAL -->
             <section id="tab-jadam" class="tab-content hidden space-y-4">
                 
                 <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-2xl text-xs text-emerald-900 leading-relaxed">
                     <i class="fas fa-leaf text-emerald-700 mr-1"></i> <b>ජෛව පළිබෝධ හා දිලීර පාලනය:</b> නයි මිරිස් වගාවට රසායනික කෘමිනාශක හෝ රසායනික දිලීරනාශක අවශ්‍ය නැත. JWA සහ JS සංයෝජනයෙන් 100% ක් රෝග මර්දනය කළ හැක.
                 </div>
 
-                <!-- 1. JS (JADAM SULFUR) 10L RECIPE -->
+                <!-- JS 10L RECIPE -->
                 <div class="bg-white p-4 rounded-3xl shadow-sm border border-amber-300 space-y-2">
                     <div class="flex justify-between items-center">
                         <h4 class="font-bold text-gray-900 text-sm flex items-center gap-2">
@@ -271,7 +384,7 @@
                     </button>
                 </div>
 
-                <!-- 2. JWA 5L RECIPE -->
+                <!-- JWA 5L RECIPE -->
                 <div class="bg-white p-4 rounded-3xl shadow-sm border border-emerald-200 space-y-2">
                     <div class="flex justify-between items-center">
                         <h4 class="font-bold text-gray-900 text-sm flex items-center gap-2">
@@ -296,7 +409,7 @@
                     </button>
                 </div>
 
-                <!-- 3. JLF -->
+                <!-- JLF -->
                 <div class="bg-white p-4 rounded-3xl shadow-sm border border-emerald-200 space-y-2">
                     <div class="flex justify-between items-center">
                         <h4 class="font-bold text-gray-900 text-sm flex items-center gap-2">
@@ -305,7 +418,6 @@
                         <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">දියර පොහොර</span>
                     </div>
                     <p class="text-xs text-gray-600">පත්‍ර වල යටි පැත්තට ස්ප්‍රේ කරන ක්ෂණික ශාක පෝෂකය.</p>
-                    
                     <div id="jlfRecipeDetail" class="recipe-content hidden space-y-2 pt-2 border-t border-gray-100 text-xs bg-emerald-50 p-3 rounded-2xl">
                         <p>• වල් පැළෑටි/දළු + කැලෑ පස් මිටක් + වැසි ජලය දමා පියන වසා මාස 2-3ක් තබා 1:30 හෝ 1:50 ට වැසි ජලය සමඟ මිශ්‍ර කර පත්‍ර යටට ස්ප්‍රේ කරන්න.</p>
                     </div>
@@ -314,7 +426,7 @@
                     </button>
                 </div>
 
-                <!-- 4. JMS -->
+                <!-- JMS -->
                 <div class="bg-white p-4 rounded-3xl shadow-sm border border-purple-200 space-y-2">
                     <div class="flex justify-between items-center">
                         <h4 class="font-bold text-gray-900 text-sm flex items-center gap-2">
@@ -323,7 +435,6 @@
                         <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded-full">පාංශු සත්කාරය</span>
                     </div>
                     <p class="text-xs text-gray-600">ගස් මුලට වදින සේ ස්ප්‍රේ කරන ජීවාමෘතය.</p>
-                    
                     <div id="jmsRecipeDetail" class="recipe-content hidden space-y-2 pt-2 border-t border-gray-100 text-xs bg-purple-50 p-3 rounded-2xl">
                         <p>• වතුර 20L + තැම්බූ අල ගෙඩි 1 + කැලෑ පස් මිටක් + මුහුදු ලුණු 20g රෙදි පොදියක දමා මිරිකා දින 2-3ක් තබා පෙණ ආ පසු ගස් මුලට වත්කරන්න.</p>
                     </div>
@@ -339,7 +450,7 @@
                 </div>
             </section>
 
-            <!-- TAB 3: WATER & GENERAL ADVICE -->
+            <!-- TAB 4: WATER & GENERAL ADVICE -->
             <section id="tab-water" class="tab-content hidden space-y-4">
                 <div class="bg-white p-4 rounded-3xl shadow-sm border border-blue-100">
                     <h3 class="font-bold text-gray-800 text-sm flex items-center gap-2 mb-2">
@@ -359,7 +470,7 @@
                 </div>
             </section>
 
-            <!-- TAB 4: SCANNER SCREEN -->
+            <!-- TAB 5: SCANNER SCREEN -->
             <section id="tab-scan" class="tab-content hidden space-y-4">
                 <div class="bg-white p-5 rounded-3xl shadow-sm border text-center">
                     <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2 text-2xl">
@@ -394,55 +505,153 @@
                         <b class="text-green-900 block"><i class="fas fa-leaf text-green-700 mr-1"></i> නිර්දේශිත ස්වභාවික පිළියම:</b>
                         <span id="resOrganic" class="text-green-800">16L ටැංකියකට JWA 80ml + JS 20ml මිශ්‍ර කර හවස 4න් පසු කොළ යටට ස්ප්‍රේ කරන්න. සෛල බෙදීමට පොල් කිරි සත්කාරය ලබාදෙන්න.</span>
                     </div>
-                    <div class="text-[10px] text-gray-400 border-t pt-2 italic">
-                        <i class="fas fa-info-circle mr-1"></i> වගකීම් සීමාව: මෙම රෝග විනිශ්චය මූලික උපදෙසක් පමණි. බරපතළ අවස්ථාවකදී කෘෂිකර්ම උපදේශකවරයෙකුගෙන් උපදෙස් ලබාගන්න.
-                    </div>
                 </div>
             </section>
 
         </main>
 
-        <!-- Bottom Navigation Bar -->
+        <!-- 5-Tab Bottom Navigation Bar -->
         <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around p-2 max-w-md mx-auto shadow-lg z-30">
-            <button onclick="navigateTab('schedule')" id="btn-tab-schedule" class="flex flex-col items-center text-emerald-700 text-[10px] font-bold py-1">
+            <button onclick="navigateTab('schedule')" id="btn-tab-schedule" class="flex flex-col items-center text-emerald-700 text-[9px] font-bold py-1">
                 <i class="fas fa-calendar-alt text-base mb-0.5"></i>
                 <span>කාලසටහන</span>
             </button>
-            <button onclick="navigateTab('jadam')" id="btn-tab-jadam" class="flex flex-col items-center text-gray-400 text-[10px] font-semibold py-1">
+            <button onclick="navigateTab('market')" id="btn-tab-market" class="flex flex-col items-center text-gray-400 text-[9px] font-semibold py-1">
+                <i class="fas fa-store text-base mb-0.5"></i>
+                <span>වෙළඳපොළ</span>
+            </button>
+            <button onclick="navigateTab('jadam')" id="btn-tab-jadam" class="flex flex-col items-center text-gray-400 text-[9px] font-semibold py-1">
                 <i class="fas fa-flask text-base mb-0.5"></i>
                 <span>ජෛව අත්පොත</span>
             </button>
-            <button onclick="navigateTab('water')" id="btn-tab-water" class="flex flex-col items-center text-gray-400 text-[10px] font-semibold py-1">
+            <button onclick="navigateTab('water')" id="btn-tab-water" class="flex flex-col items-center text-gray-400 text-[9px] font-semibold py-1">
                 <i class="fas fa-tint text-base mb-0.5"></i>
                 <span>වතුර/සාත්තු</span>
             </button>
-            <button onclick="navigateTab('scan')" id="btn-tab-scan" class="flex flex-col items-center text-gray-400 text-[10px] font-semibold py-1">
+            <button onclick="navigateTab('scan')" id="btn-tab-scan" class="flex flex-col items-center text-gray-400 text-[9px] font-semibold py-1">
                 <i class="fas fa-qrcode text-base mb-0.5"></i>
                 <span>ස්කෑනර්</span>
             </button>
         </nav>
     </div>
 
-    <!-- PROFILE MODAL -->
-    <div id="profileModal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-3xl max-w-sm w-full p-5 text-center shadow-xl border border-gray-200 space-y-4">
-            <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl">
-                <i class="fas fa-user-circle"></i>
-            </div>
-            <div>
-                <h3 id="profName" class="text-sm font-black text-gray-800">ගොවි මහතා</h3>
-                <p id="profId" class="text-xs text-gray-500">user@gmail.com</p>
+    <!-- POST HARVEST AD MODAL -->
+    <div id="postHarvestModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-3 shadow-2xl my-6">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h3 class="text-xs font-black text-gray-800"><i class="fas fa-bullhorn text-red-600 mr-1"></i> අස්වනු විකිණීමේ දැන්වීමක් පළ කරන්න</h3>
+                <button onclick="closePostHarvestModal()" class="text-gray-400 hover:text-gray-600 text-sm"><i class="fas fa-times"></i></button>
             </div>
             
-            <div class="space-y-2 border-t pt-3 text-xs">
-                <button onclick="openPaywall()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2.5 rounded-xl shadow">
+            <div class="space-y-2 text-xs">
+                <div>
+                    <label class="font-bold text-gray-700 block mb-0.5">ඔබගේ නම</label>
+                    <input type="text" id="postFarmerName" placeholder="උදා: සිරිපාල බණ්ඩාර" class="w-full border rounded-xl p-2 bg-gray-50 text-xs">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="font-bold text-gray-700 block mb-0.5">කැඩූ අස්වැන්න (kg)</label>
+                        <input type="number" id="postKg" placeholder="උදා: 25" class="w-full border rounded-xl p-2 bg-gray-50 text-xs font-bold text-emerald-800">
+                    </div>
+                    <div>
+                        <label class="font-bold text-gray-700 block mb-0.5">1kg ක මිල (රු.)</label>
+                        <input type="number" id="postPrice" placeholder="උදා: 1800" class="w-full border rounded-xl p-2 bg-gray-50 text-xs font-bold text-emerald-800">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="font-bold text-gray-700 block mb-0.5">දුරකථන අංකය</label>
+                        <input type="tel" id="postPhone" placeholder="07XXXXXXXX" class="w-full border rounded-xl p-2 bg-gray-50 text-xs font-bold">
+                    </div>
+                    <div>
+                        <label class="font-bold text-gray-700 block mb-0.5">පළාත / නගරය</label>
+                        <input type="text" id="postLocation" placeholder="උදා: කුරුණෑගල" class="w-full border rounded-xl p-2 bg-gray-50 text-xs">
+                    </div>
+                </div>
+                <div>
+                    <label class="font-bold text-gray-700 block mb-0.5">අස්වැන්නේ ඡායාරූපය</label>
+                    <input type="file" id="postImageInput" accept="image/*" class="w-full text-[10px] file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:bg-emerald-100 file:text-emerald-800">
+                </div>
+            </div>
+
+            <button onclick="saveHarvestAd()" class="w-full bg-red-600 hover:bg-red-700 text-white font-extrabold py-2.5 rounded-xl text-xs shadow mt-2">
+                දැන්වීම පළ කරන්න
+            </button>
+        </div>
+    </div>
+
+    <!-- PROFILE MODAL (WITH STAGE-BY-STAGE PHOTO JOURNAL) -->
+    <div id="profileModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-4 shadow-2xl my-6">
+            <div class="flex justify-between items-center border-b pb-2">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-lg font-bold">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div>
+                        <h3 id="profName" class="text-xs font-black text-gray-800">ගොවි මහතා</h3>
+                        <p id="profId" class="text-[10px] text-gray-500">user@gmail.com</p>
+                    </div>
+                </div>
+                <button onclick="closeProfileModal()" class="text-gray-400 hover:text-gray-600 text-sm"><i class="fas fa-times"></i></button>
+            </div>
+
+            <!-- Crop Stage Photo Journal -->
+            <div class="space-y-2 border-t pt-2">
+                <div class="flex justify-between items-center">
+                    <h4 class="text-xs font-black text-gray-800"><i class="fas fa-camera text-emerald-600 mr-1"></i> මගේ වගාවේ ඡායාරූප දිනපොත</h4>
+                    <span class="text-[9px] text-gray-400">අදියර 4</span>
+                </div>
+                <p class="text-[10px] text-gray-500">වගාවේ එක් එක් අවධි වල ඡායාරූප මෙහි Save කර තබාගන්න:</p>
+
+                <div class="grid grid-cols-2 gap-2 text-center text-[10px]">
+                    <!-- Stage 1 -->
+                    <div class="border rounded-2xl p-2 bg-gray-50 space-y-1">
+                        <span class="font-bold block text-emerald-900">1. මුල් ඇදීම (Roots)</span>
+                        <img id="stageImg1" src="" class="hidden w-full h-16 object-cover rounded-xl border">
+                        <input type="file" id="stageFileInput1" accept="image/*" class="hidden" onchange="handleStageUpload(1, event)">
+                        <button onclick="document.getElementById('stageFileInput1').click()" class="bg-emerald-100 text-emerald-800 font-bold px-2 py-1 rounded-lg text-[9px] w-full">
+                            <i class="fas fa-plus"></i> Photo 1
+                        </button>
+                    </div>
+                    <!-- Stage 2 -->
+                    <div class="border rounded-2xl p-2 bg-gray-50 space-y-1">
+                        <span class="font-bold block text-lime-900">2. පොහොට්ටු (Buds)</span>
+                        <img id="stageImg2" src="" class="hidden w-full h-16 object-cover rounded-xl border">
+                        <input type="file" id="stageFileInput2" accept="image/*" class="hidden" onchange="handleStageUpload(2, event)">
+                        <button onclick="document.getElementById('stageFileInput2').click()" class="bg-lime-100 text-lime-800 font-bold px-2 py-1 rounded-lg text-[9px] w-full">
+                            <i class="fas fa-plus"></i> Photo 2
+                        </button>
+                    </div>
+                    <!-- Stage 3 -->
+                    <div class="border rounded-2xl p-2 bg-gray-50 space-y-1">
+                        <span class="font-bold block text-teal-900">3. මල් පිපීම (Flowers)</span>
+                        <img id="stageImg3" src="" class="hidden w-full h-16 object-cover rounded-xl border">
+                        <input type="file" id="stageFileInput3" accept="image/*" class="hidden" onchange="handleStageUpload(3, event)">
+                        <button onclick="document.getElementById('stageFileInput3').click()" class="bg-teal-100 text-teal-800 font-bold px-2 py-1 rounded-lg text-[9px] w-full">
+                            <i class="fas fa-plus"></i> Photo 3
+                        </button>
+                    </div>
+                    <!-- Stage 4 -->
+                    <div class="border rounded-2xl p-2 bg-gray-50 space-y-1">
+                        <span class="font-bold block text-red-900">4. කරල් (Harvest)</span>
+                        <img id="stageImg4" src="" class="hidden w-full h-16 object-cover rounded-xl border">
+                        <input type="file" id="stageFileInput4" accept="image/*" class="hidden" onchange="handleStageUpload(4, event)">
+                        <button onclick="document.getElementById('stageFileInput4').click()" class="bg-red-100 text-red-800 font-bold px-2 py-1 rounded-lg text-[9px] w-full">
+                            <i class="fas fa-plus"></i> Photo 4
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-2 border-t pt-2 text-xs">
+                <button onclick="openPaywall()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 rounded-xl shadow">
                     <i class="fas fa-crown mr-1"></i> VIP සාමාජිකත්වය ලබාගන්න
                 </button>
-                <button onclick="confirmAccountDeletion()" class="w-full bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 font-bold py-2.5 rounded-xl">
+                <button onclick="confirmAccountDeletion()" class="w-full bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 font-bold py-2 rounded-xl">
                     <i class="fas fa-trash-alt mr-1"></i> ගිණුම සහ දත්ත මකාදමන්න (Delete Account)
                 </button>
             </div>
-            <button onclick="closeProfileModal()" class="text-xs text-gray-400 font-bold block mx-auto">වසන්න</button>
         </div>
     </div>
 
@@ -479,7 +688,7 @@
         </div>
     </div>
 
-    <!-- 3. PAYWALL MODAL -->
+    <!-- PAYWALL MODAL -->
     <div id="paywallModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border-2 border-amber-300 space-y-4">
             <div class="w-16 h-16 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner">
@@ -490,7 +699,6 @@
                 <h3 class="text-base font-black text-gray-800 mt-1">දැන්වීම් රහිත පූර්ණ ප්‍රවේශය</h3>
                 <p class="text-xs text-gray-500 mt-1">දැන්වීම් නැතිව සම්පූර්ණ කාලසටහන සහ ජෛව වට්ටෝරු සදහටම අගුළු හරින්න:</p>
             </div>
-            
             <div class="space-y-2">
                 <button onclick="handleSubscribePayment(250, 'මාසික')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-xs py-3 rounded-2xl shadow flex justify-between px-4 items-center">
                     <span>මාසික සාමාජිකත්වය</span>
@@ -505,7 +713,7 @@
         </div>
     </div>
 
-    <!-- 4. ADVERTISEMENT OVERLAY (30s Countdown Simulation) -->
+    <!-- ADVERTISEMENT OVERLAY (30s) -->
     <div id="adOverlay" class="hidden fixed inset-0 bg-black flex flex-col justify-between p-4 z-50 text-white">
         <div class="flex justify-between items-center bg-gray-900/80 p-3 rounded-2xl">
             <span class="text-xs bg-amber-500 text-black font-extrabold px-2 py-0.5 rounded">ස්පොන්සර්ඩ් දැන්වීම (Ad)</span>
@@ -521,7 +729,7 @@
         </button>
     </div>
 
-    <!-- JAVASCRIPT SCHEDULE ENGINE -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
         document.addEventListener('keyup', (e) => {
             if (e.key === 'PrintScreen') { 
@@ -679,6 +887,8 @@
             const user = JSON.parse(localStorage.getItem('NAI_USER'));
             if (user && user.isLoggedIn) showAppUI(user);
             else showAuthView('login');
+            renderHarvestPosts();
+            loadStagePhotos();
         };
 
         function getUserRegistry() { return JSON.parse(localStorage.getItem('PERMANENT_USER_REGISTRY') || '{}'); }
@@ -699,7 +909,6 @@
             return !!(registry[id] && registry[id].isSubscribed);
         }
 
-        // 3 DAYS FREE TRIAL (72 Hours)
         function isThreeDaysFreeActive() {
             const user = JSON.parse(localStorage.getItem('NAI_USER'));
             if (!user) return false;
@@ -942,6 +1151,129 @@
             );
         }
 
+        // STAGE PHOTOS
+        function handleStageUpload(stageNum, event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64 = e.target.result;
+                localStorage.setItem('STAGE_PHOTO_' + stageNum, base64);
+                loadStagePhotos();
+                showAppAlert('සුරැකිණි', `Stage ${stageNum} ඡායාරූපය සාර්ථකව සුරැකිණි!`, 'fa-camera');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function loadStagePhotos() {
+            for (let i = 1; i <= 4; i++) {
+                const saved = localStorage.getItem('STAGE_PHOTO_' + i);
+                const imgEl = document.getElementById('stageImg' + i);
+                if (saved && imgEl) {
+                    imgEl.src = saved;
+                    imgEl.classList.remove('hidden');
+                }
+            }
+        }
+
+        // HARVEST POSTS
+        function openPostHarvestModal() {
+            document.getElementById('postHarvestModal').classList.remove('hidden');
+        }
+
+        function closePostHarvestModal() {
+            document.getElementById('postHarvestModal').classList.add('hidden');
+        }
+
+        function saveHarvestAd() {
+            const name = document.getElementById('postFarmerName').value.trim();
+            const kg = document.getElementById('postKg').value.trim();
+            const price = document.getElementById('postPrice').value.trim();
+            const phone = document.getElementById('postPhone').value.trim();
+            const location = document.getElementById('postLocation').value.trim();
+            const fileInput = document.getElementById('postImageInput');
+
+            if (!name || !kg || !phone || !location) {
+                return showAppAlert('අසම්පූර්ණයි', 'කරුණාකර සියලු විස්තර පුරවන්න!');
+            }
+
+            const post = {
+                id: Date.now(),
+                name: name,
+                kg: kg,
+                price: price || 'සාකච්ඡා කරගත හැක',
+                phone: phone,
+                location: location,
+                date: new Date().toLocaleDateString('si-LK'),
+                image: ""
+            };
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    post.image = e.target.result;
+                    finalizeHarvestSave(post);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                finalizeHarvestSave(post);
+            }
+        }
+
+        function finalizeHarvestSave(post) {
+            const posts = JSON.parse(localStorage.getItem('NAI_HARVEST_POSTS') || '[]');
+            posts.unshift(post);
+            localStorage.setItem('NAI_HARVEST_POSTS', JSON.stringify(posts));
+            closePostHarvestModal();
+            renderHarvestPosts();
+            showAppAlert('සාර්ථකයි!', 'ඔබගේ අස්වනු දැන්වීම සාර්ථකව පළ විය!', 'fa-bullhorn', 'bg-red-100 text-red-800');
+        }
+
+        function renderHarvestPosts() {
+            const container = document.getElementById('harvestPostsContainer');
+            if (!container) return;
+            const posts = JSON.parse(localStorage.getItem('NAI_HARVEST_POSTS') || '[]');
+
+            if (posts.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-6 text-gray-400 text-xs">
+                        <i class="fas fa-store-alt text-2xl mb-1 text-gray-300"></i><br>දැනට පළ කළ අස්වනු දැන්වීම් නොමැත. ඔබේ අස්වැන්න විකුණා ගැනීමට දැන්වීමක් පළ කරන්න!
+                    </div>
+                `;
+                return;
+            }
+
+            let html = "";
+            posts.forEach(p => {
+                const imgHtml = p.image ? `<img src="${p.image}" class="w-20 h-20 object-cover rounded-xl border">` : `<div class="w-20 h-20 bg-red-50 text-red-400 rounded-xl flex items-center justify-center text-2xl border"><i class="fas fa-pepper-hot"></i></div>`;
+                html += `
+                    <div class="bg-white p-3 rounded-2xl border border-gray-200 shadow-sm flex gap-3 items-center">
+                        ${imgHtml}
+                        <div class="flex-1 text-xs space-y-0.5">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-extrabold text-gray-800">${p.name}</h4>
+                                <span class="text-[9px] bg-red-100 text-red-800 font-bold px-1.5 py-0.2 rounded">${p.date}</span>
+                            </div>
+                            <p class="text-[11px] text-gray-600 font-bold"><i class="fas fa-map-marker-alt text-red-500 mr-1"></i>${p.location}</p>
+                            <div class="flex gap-2 text-[10px] text-emerald-900 font-black pt-0.5">
+                                <span class="bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">අස්වැන්න: ${p.kg} kg</span>
+                                <span class="bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded text-amber-900">1kg: රු. ${p.price}</span>
+                            </div>
+                            <div class="flex gap-1.5 pt-1.5">
+                                <a href="tel:${p.phone}" class="bg-emerald-700 text-white px-2 py-1 rounded-lg text-[10px] font-bold flex items-center gap-1 shadow">
+                                    <i class="fas fa-phone-alt"></i> Call
+                                </a>
+                                <a href="https://wa.me/94${p.phone.replace(/^0/, '')}" target="_blank" class="bg-green-600 text-white px-2 py-1 rounded-lg text-[10px] font-bold flex items-center gap-1 shadow">
+                                    <i class="fab fa-whatsapp"></i> Chat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
         function toggleCropStatusFields() {
             const status = document.getElementById('cropStatus').value;
             if (status === 'planted') {
@@ -1020,7 +1352,7 @@
             });
         }
 
-        // BATCH CALCULATOR (Realistic 3000 Plants = ~4 16L Tanks Ratio)
+        // BATCH CALCULATOR
         function buildIntelligentSchedule(plantDate, currentAge, plantCount, fertProgram) {
             const container = document.getElementById('stagesContainer');
             container.innerHTML = "";
@@ -1070,7 +1402,7 @@
                         statusBadge = `<span class="text-[9px] text-gray-400 ml-1">(පසු වූ)</span>`;
                     }
 
-                    // Practical Foliar Calculation (3000 plants -> ~4 16L tanks)
+                    // Practical Foliar Calculation (3000 plants = ~4 16L tanks)
                     let batchInfoHtml = "";
                     if (t.type === 'fert') {
                         const isAlbert = t.title.includes("ඇල්බට්") || t.title.includes("Albert");
@@ -1116,117 +1448,4 @@
                                     </div>
                                     <div class="space-y-1 text-[10px] leading-relaxed">
                                         <p><i class="fas fa-cubes text-amber-700 mr-1"></i> <b>කැට පොහොර ලෙස පසට දමනවා නම්:</b> පැළයකට <b>${granularPerPlant}g පමණ</b> බැගින් (මුළු බර: <b>${totalGranularText} පමණ</b>) මුලට ඈතින් රවුම් ආකාරයට දමා <b>හොඳින් වතුර දමන්න</b>.</p>
-                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර යොදනවා නම්:</b> මුළු වතුර <b>${rootDrenchWaterLiters}L පමණ</b> කට යාරමිලා <b>${rootDrenchFertText} පමණ</b> දියකර මුලට දමන්න.</p>
-                                    </div>
-                                </div>
-                            `;
-                        } else {
-                            batchInfoHtml = `
-                                <div class="mt-2 bg-emerald-50/90 border border-emerald-300 p-2.5 rounded-2xl text-[10px] text-emerald-950 space-y-1.5">
-                                    <div class="font-black text-emerald-900 border-b border-emerald-200 pb-1 flex justify-between items-center">
-                                        <span><i class="fas fa-calculator mr-1"></i> ${t.title} (පැළ ${plantCount} සඳහා):</span>
-                                    </div>
-                                    <div class="space-y-1 text-[10px] leading-relaxed">
-                                        <p><i class="fas fa-spray-can text-green-700 mr-1"></i> <b>පත්‍ර වලට ඉසිනවා නම්:</b> ${foliarText} ස්ප්‍රේ කරන්න.</p>
-                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර මුලට වත්කරනවා නම්:</b> වතුර <b>${rootDrenchWaterLiters}L පමණ</b> කට පොහොර <b>${rootDrenchFertText} පමණ</b> දියකර පැළයකට 100ml බැගින් මුලට දමන්න.</p>
-                                    </div>
-                                </div>
-                            `;
-                        }
-                    } else if (t.type === 'jwa' || t.type === 'tricho') {
-                        const tanksFloat = (plantCount * 4) / 3000;
-                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක් පමණ` : `${Math.ceil(tanksFloat)}ක් පමණ`;
-                        batchInfoHtml = `
-                            <div class="mt-1.5 bg-amber-50 border border-amber-200 p-2 rounded-xl text-[10px] text-amber-950 font-bold flex items-center justify-between">
-                                <span><i class="fas fa-spray-can mr-1"></i> ස්ප්‍රේ ප්‍රමාණය:</span>
-                                <span class="text-amber-800">16L ටැංකි <b>${tanksText}</b></span>
-                            </div>
-                        `;
-                    } else if (t.type === 'jms') {
-                        const tanksFloat = (plantCount * 6) / 2000;
-                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක් පමණ` : `${Math.ceil(tanksFloat)}ක් පමණ`;
-                        batchInfoHtml = `
-                            <div class="mt-1.5 bg-purple-50 border border-purple-200 p-2 rounded-xl text-[10px] text-purple-950 font-bold flex items-center justify-between">
-                                <span><i class="fas fa-tint mr-1"></i> මුල් වලට ස්ප්‍රේ ප්‍රමාණය:</span>
-                                <span class="text-purple-800">16L ටැංකි <b>${tanksText}</b></span>
-                            </div>
-                        `;
-                    } else if (t.type === 'jlf') {
-                        const tanksFloat = (plantCount * 4) / 3000;
-                        const tanksText = tanksFloat <= 0.6 ? `ලීටර් 16 ටැංකි භාගයක් පමණ` : `${Math.ceil(tanksFloat)}ක් පමණ`;
-                        batchInfoHtml = `
-                            <div class="mt-1.5 bg-green-50 border border-green-200 p-2 rounded-xl text-[10px] text-green-950 font-bold flex items-center justify-between">
-                                <span><i class="fas fa-leaf mr-1"></i> පත්‍ර යටට ස්ප්‍රේ ප්‍රමාණය:</span>
-                                <span class="text-green-800">16L ටැංකි <b>${tanksText}</b></span>
-                            </div>
-                        `;
-                    }
-
-                    tasksHtml += `
-                        <div class="${rowStyle}">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-[10px] font-extrabold bg-gray-100 text-gray-700 px-2 py-1 rounded-lg">D${t.day}</span>
-                                    <div>
-                                        <div class="flex items-center gap-1 flex-wrap">
-                                            <h5 class="text-xs font-bold text-gray-800">${t.title}</h5>
-                                            ${typeBadge}
-                                            ${statusBadge}
-                                        </div>
-                                        <p class="text-[11px] text-gray-500">${t.desc || 'නියමිත පරිදි යොදන්න.'}</p>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-[10px] block font-bold ${isToday ? 'text-emerald-700 font-black' : 'text-gray-500'}">${formattedDate}</span>
-                                    <input type="checkbox" ${isPast ? 'checked' : ''} class="w-4 h-4 accent-emerald-600 rounded cursor-pointer mt-1">
-                                </div>
-                            </div>
-                            ${batchInfoHtml}
-                        </div>
-                    `;
-                });
-
-                if (hasVisibleTask) {
-                    const stageCard = document.createElement('div');
-                    stageCard.className = "bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden mb-4";
-                    stageCard.innerHTML = `
-                        <div class="bg-gradient-to-r ${stageData.color} p-3 text-white flex justify-between items-center">
-                            <div class="flex items-center gap-2">
-                                <i class="fas ${stageData.icon} text-lg"></i>
-                                <div>
-                                    <span class="text-[10px] font-extrabold uppercase tracking-wider block opacity-90">${stageData.stage} • ${stageData.range}</span>
-                                    <h4 class="text-xs font-extrabold">${stageData.name}</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div>${tasksHtml}</div>
-                    `;
-                    container.appendChild(stageCard);
-                }
-            });
-        }
-
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('imagePreview').src = e.target.result;
-                document.getElementById('previewCard').classList.remove('hidden');
-                document.getElementById('resultCard').classList.add('hidden');
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function analyzePlant() {
-            document.getElementById('loading').classList.remove('hidden');
-            document.getElementById('analyzeBtn').classList.add('hidden');
-            setTimeout(() => {
-                document.getElementById('loading').classList.add('hidden');
-                document.getElementById('analyzeBtn').classList.remove('hidden');
-                document.getElementById('resultCard').classList.remove('hidden');
-            }, 1200);
-        }
-    </script>
-</body>
-</html>
+                                        <p><i class="fas fa-tint text-blue-700 mr-1"></i> <b>දියකර යොදනවා
