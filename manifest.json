@@ -1,0 +1,18 @@
+{
+  "name": "Scotch Bonnet Pro",
+  "short_name": "Scotch Bonnet",
+  "description": "Smart Chili Farm & Care App",
+  "start_url": "/scotch-bonnet-pro/",
+  "scope": "/scotch-bonnet-pro/",
+  "display": "standalone",
+  "background_color": "#064e3b",
+  "theme_color": "#064e3b",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1135/1135048.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
